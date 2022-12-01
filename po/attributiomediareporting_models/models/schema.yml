@@ -1,0 +1,44 @@
+
+version: 2
+# models:
+#   - name: campaigns
+#    description: "Dim Campaign table"
+#     columns:
+#       - name: id
+#         description: "The primary key for this table"
+#         tests:
+#           - unique
+#           - not_null
+
+#   - name: my_second_dbt_model
+#     description: "A starter dbt model"
+#     columns:
+#       - name: id
+#         description: "The primary key for this table"
+#         tests:
+#           - unique
+#           - not_null
+
+
+
+
+models:
+  - name: lc_dim_campaigns
+    description: "Dim Campaign table"
+
+  - name: lc_dcm_import_dailynew
+    description: "Daily table containing DCM conversion for the previous day"
+  - name: lc_conversions_dcm
+    description: "Daily table containing DCM conversion for the previous day"  
+  - name: lc_conversions_appsflyer
+    description: "Daily table containing DCM conversion for the previous day"
+  - name: bb_td_brand_validation
+    description: "Daily table containing DCM conversion for the previous day"
+
+  - name: lc_dim_customer_sessions
+    description: "Daily table containing DCM conversion for the previous day"
+  - name: lc_dim_customer_fullvisitorid
+    description: "Daily table containing DCM conversion for the previous day"
+  
+    
+

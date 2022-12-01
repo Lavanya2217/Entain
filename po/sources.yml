@@ -1,0 +1,590 @@
+version: 2
+
+sources:
+
+##  GA sessions tables for UK Sports brands
+  - name: Lads_GA
+    schema: '199519353'
+    database: ladbrokes-big-query
+    tags: ["Google Analytics", "UK Sports brands"] 
+    tables:
+       - name: ga_sessions_*
+  - name: Coral_GA
+    schema: '142849218'
+    database: api-project-786064088220
+    tags: ["Google Analytics", "UK Sports brands"] 
+    tables:
+       - name: ga_sessions_*
+  - name: Bwin_GA
+    schema: '225824617'
+    database: api-project-786064088220
+    tags: ["Google Analytics", "Bwin"] 
+    tables:
+       - name: ga_sessions_*
+  - name: Cheeky_GA
+    schema: '232969778'
+    database: api-project-786064088220
+    tags: ["Google Analytics", "UK Gaming brands"] 
+    tables:
+       - name: ga_sessions_*
+  - name: Gala_GA
+    schema: '233143389'
+    database: api-project-786064088220
+    tags: ["Google Analytics", "UK Gaming brands"] 
+    tables:
+       - name: ga_sessions_*
+  - name: Foxy_GA
+    schema: '233118966'
+    database: api-project-786064088220
+    tags: ["Google Analytics", "UK Gaming brands"] 
+    tables:
+       - name: ga_sessions_*
+  - name: PartyCasino_GA
+    schema: '233135628'
+    database: api-project-786064088220
+    tags: ["Google Analytics", "Party brands"] 
+    tables:
+       - name: ga_sessions_*
+  - name: PartyPoker_GA
+    schema: '234222458'
+    database: api-project-786064088220
+    tags: ["Google Analytics", "Party brands"] 
+    tables:
+       - name: ga_sessions_*
+
+
+## DCM UK tables for Display conversions
+  - name: DCM_UK
+    schema: MediaReportingDCM
+    database: api-project-786064088220
+    tags: ["DCM", "UK Sports brands", "UK Gaming brands"] 
+    tables:
+       - name: activity_785192
+       - name: p_click_785192
+       - name: p_impression_785192
+       - name: p_match_table_campaigns_785192
+       - name: p_match_table_activity_cats_785192
+       - name: p_match_table_placement_cost_785192
+       - name: p_match_table_placements_785192
+       - name: p_match_table_sites_785192
+
+
+
+## DCM Other brands tables for Display conversions
+  - name: DCM_GVC
+    schema: MediaReportingDCM_GVC
+    database: api-project-786064088220
+    tags: ["DCM", "Bwin", "Party brands"] 
+    tables:
+       - name: activity_8807
+       - name: p_click_8807
+       - name: p_impression_8807
+       - name: p_match_table_campaigns_8807
+       - name: p_match_table_activity_cats_8807
+       - name: p_match_table_placements_8807
+       - name: p_match_table_placement_cost_8807
+       - name: p_match_table_ads_8807
+       - name: p_match_table_sites_8807
+
+
+
+
+
+
+
+
+
+
+
+## Appsflyer locker
+  - name: AppsFlyerGVC
+    schema: AppsFlyerGVC
+    database: api-project-786064088220
+    tags: ["DCM", "UK Sports brands",  "UK Gaming brands", "Bwin", "Party brands"] 
+    tables:
+       - name: GVC_Appsflyer_locker
+
+
+
+
+##  UK Brands: Fivetran tables for costs
+  - name: tradedesk_lcg
+    schema: tradedesk_lcg
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: tradedesk_lcg
+  - name: google_ads
+    schema: google_ads
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: campaign_stats
+  - name: fivetran_email
+    schema: email
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: daily_dv_360
+        - name: daily_appnexus
+        - name: appnexus_2
+  - name: facebook_ads
+    schema: facebook
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: facebook_ads
+  - name: google_display_and_video_360
+    schema: google_display_and_video_360
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: dv_360_ladbrokes_il
+  - name: apple_search_ads
+    schema: apple_search_ads
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: campaign_history
+        - name: organization
+        - name: campaign_report
+  - name: apple_search_ads_cashcade
+    schema: apple_search_ads_cashcade
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: campaign_history
+        - name: organization
+        - name: search_term_report
+  - name: bing_ads
+    schema: bing_ads
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: campaign_performance_daily_report
+        - name: campaign_history
+        - name: account_history
+  - name: snapchat_ads
+    schema: snapchat_ads
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: campaign_history
+        - name: ad_account_history
+        - name: campaign_hourly_report
+  - name: twitter_ads
+    schema: twitter_ad
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: campaign_history
+        - name: account_history
+        - name: campaign_report
+  - name: taboola
+    schema: taboola
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: campaign
+        - name: campaign_site_day_report
+  - name: outbrain
+    schema: outbrain
+    database: lcg-fivetran-prod
+    tags: ["Fivetran", "UK Sports brands",  "UK Gaming brands"]
+    tables:
+        - name: campaign_history
+        - name: marketer_history
+        - name: campaign_report
+
+##  UK brands: other costs
+  - name: display_partner
+    schema: display_partner
+    database: lcg-fivetran-dev
+    tables:
+        - name: display_partner_spend_table
+        - name: FB_partners_2021
+        - name: FG_partners_2021
+        - name: GB_partners_2021
+        - name: GC_partners_2021
+        - name: GS_partners_2021
+        - name: FB_partners_historical_2021
+        - name: FC_partners_historical_2021
+        - name: GB_partners_historical_2021
+        - name: GC_partners_historical_2021
+        - name: GS_partners_historical_2021
+
+
+
+
+
+
+
+
+##  GVC Brands: Fivetran tables for costs
+  - name: gvc_google_ads_campaign_performance_party_gaming
+    schema: google_ads_campaign_performance_party_gaming
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_google_ads_campaign_performance_mcc_partypoker
+    schema: google_ads_campaign_performance_mcc_partypoker
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_google_ads_campaign_performance_mcc_partycasino
+    schema: google_ads_campaign_performance_mcc_partycasino
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_google_ads_campaign_performance_bwin_mcc
+    schema: google_ads_campaign_performance_bwin_mcc
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_google_ads_campaign_performance_party_casino
+    schema: google_ads_campaign_performance_party_casino
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_google_display_and_video_360
+    schema: google_display_and_video_360
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_fivetran_email
+    schema: email
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: appnexus
+        - name: verizon_dsp
+        - name: google_ads_performancemax_gr
+  - name: gvc_tomorrow
+    schema: tomorrow
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: AppNexus
+        - name: APPSFLYER_APPNETWORKS
+        - name: APPSFLYER_FACEBOOK
+        - name: Connected_TV
+        - name: Amobee
+        - name: Dating_Apps
+        - name: Forza
+        - name: EngageYa
+        - name: MissMarcadores
+        - name: N365
+        - name: OutBrain
+        - name: Taboola
+        - name: Viber
+        - name: fivetran_datasets
+  - name: gvc_facebook_ad_account
+    schema: facebook_ad_account
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: account_history
+  - name: gvc_facebook_additional
+    schema: facebook_additional
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+        - name: account_history
+  - name: gvc_facebook
+    schema: facebook
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_facebook2
+    schema: facebook2
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_facebook_hourly
+    schema: facebook_hourly
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_apple_search_ads_gvc_services_ltd
+    schema: apple_search_ads_gvc_services_ltd
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_apple_search_ads_bwin_masteracc
+    schema: apple_search_ads_bwin_masteracc
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: campaign_history
+        - name: organization
+        - name: campaign_report
+  - name: gvc_apple_search_ads_gvc_services_ltd
+    schema: apple_search_ads_gvc_services_ltd
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: campaign_report
+        - name: campaign_history
+        - name: organization
+  - name: gvc_apple_search_ads_moblinglobalzoomltd
+    schema: apple_search_ads_moblinglobalzoomltd
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: campaign_report
+        - name: campaign_history
+        - name: organization
+  - name: gvc_apple_search_ads_ppuk
+    schema: apple_search_ads_ppuk
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: campaign_history
+        - name: organization
+        - name: campaign_report
+  - name: gvc_apple_search_ads_partycasino
+    schema: apple_search_ads_partycasino
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: campaign_report
+        - name: campaign_history
+        - name: organization
+  - name: gvc_bing_ads
+    schema: bingads
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: campaign_history
+        - name: account_history
+        - name: share_of_voice_daily_report
+        - name: campaign_performance_daily_report
+  - name: gvc_twitter_ads_final
+    schema: twitter_ads_final
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: campaign_history
+        - name: account_history
+        - name: raw_data_V2
+        - name: fivetran_datasets
+        - name: historical_data
+        - name: campaign_report
+  - name: gvc_snapchat_ads
+    schema: snapchat_ads
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: campaign_history
+        - name: ad_account_history
+        - name: campaign_hourly_report
+  - name: gvc_tradedesk_
+    schema: tradedesk_
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: raw_data_V2
+  - name: gvc_double_click_campaign_manager_final
+    schema: double_click_campaign_manager_final
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: fivetran_datasets
+  - name: gvc_smadex
+    schema: smadex
+    database: gvc-fivetran-prod
+    tags: ["Fivetran", "Bwin",  "Party brands"]
+    tables:
+        - name: historical_data
+        - name: smadex_historical_data
+        - name: campaign_report
+
+
+
+
+
+## Offline costs
+  - name: offline_marketing
+    schema: offline_marketing
+    database: lcg-fivetran-dev
+    tags: ["Offline costs"]
+    tables:
+        - name: coral_offline_cost
+          tags: ["UK Sports brands"]
+        - name: lads_offline
+          tags: ["UK Sports brands"]
+        - name: gala_bingo_offline
+          tags: ["UK Gaming brands"]
+        - name: gala_spins_offline
+          tags: ["UK Gaming brands"]
+        - name: foxy_offline
+          tags: ["UK Gaming brands"]
+
+
+  - name: offline_marketing_ukgaming
+    schema: AttributionMediaReporting_GVC_Dev
+    database: api-project-786064088220
+    tags: ["Offline costs",  "Bwin"]
+    tables:
+        - name: Offline_costs
+
+  - name: PartyPoker_Offline
+    schema: PartyPoker_Offline
+    database: gvc-fivetran-dev
+    tags: ["Offline costs",  "Party brands"]
+    tables:
+        - name: N365_Data
+        - name: N365_Data2
+        - name: N365_Data3
+        - name: N365_PP_integrated
+        - name: Partypoker_Appnetwork_Spend
+        - name: Partypoker_Appnetworks
+        - name: PP_App_Nw_Spend
+        - name: PP_Targets
+        - name: Mclaren_Digital_data
+
+  - name: Party_Offline_data_2
+    schema: Party_Offline_data_2
+    database: gvc-fivetran-prod
+    tags: ["Offline costs",  "Party brands"]
+    tables:
+        - name: N365_Data
+        - name: PP_Team_Online_Spend
+        - name: PP_Twitch_Monthly_Costs
+  - name: gvc_offline_marketing
+    schema: offline_marketing
+    database: gvc-fivetran-prod
+    tags: ["Offline costs",  "Party brands"]
+    tables:
+        - name: PartyCasino_Brand_7stars
+        - name: PartyCasino_Brand_Hubble
+        - name: PartyPoker_UK
+  - name: gvc_partners_costs
+    schema: partners_costs
+    database: gvc-fivetran-prod
+    tags: ["Offline costs",  "Party brands"]
+    tables:
+        - name: PartyCasino_AppNetworks
+  
+        
+
+
+
+## exclusion lists
+  - name: exclusions_lists_lc
+    schema: AttributionMediaReporting_xDev
+    database: api-project-786064088220
+    tags: ["exclusion lists"]
+    tables:
+        - name: exclusion_list_Display_Partners
+        - name: exclusion_list_Affiliates_final
+        - name: exclusion_list
+
+  - name: other_lists_lc
+    schema: MediaReportingIMS
+    database: api-project-786064088220
+    tags: ["exclusion lists"]
+    tables:
+        - name: IMS_CustomerID
+
+  - name: exclusions_lists_gvc
+    schema: AttributionMediaReporting_GVC_Dev
+    database: api-project-786064088220
+    tags: ["exclusion lists"]
+    tables:
+        - name: exclusion_list_Referrals
+
+  - name: exclusions_lists_pp
+    schema: AttributionMediaReporting_PP
+    database: api-project-786064088220
+    tags: ["exclusion lists"]
+    tables:
+        - name: App_Networks_Exclusion_List
+        - name: App_Networks_Inclusion_List
+        - name: App_Networks_Partners_Lookup
+        - name: exclusion_list_Referrals 
+        - name: PPC_Other_lkp
+
+
+## other files
+  - name: files
+    schema: AttributionMediaReporting_GVC_Dev
+    database: api-project-786064088220
+    tags: ["support files"]
+    tables:
+        - name: Country_isocode
+        - name: crm_decoder
+
+
+
+
+
+## Teradata tables
+  - name: DWPRODVIEWSPPMBI
+    schema: DWPRODVIEWSPPMBI
+    database: lcg-bi-mia-prod
+    tags: ["Teradata"]
+    tables:
+        - name: MODEL_DESCRIPTION
+        - name: MODEL_DAILY_SCORES
+  - name: DWPRODVIEWSMSTR
+    schema: DWPRODVIEWSMSTR
+    database: lcg-bi-mia-prod
+    tags: ["Teradata"]
+    tables:
+        - name: DIM_PLAYER
+        - name: DIM_PLAYER_ACCOUNT
+        - name: DIM_FRONT_END
+        - name: DIM_PLAYER_FIRST_LAST
+        - name: DIM_SKIN
+        - name: DIM_TIME_ZONE
+        - name: DIM_TRACKER
+        - name: DIM_DEAL
+        - name: DIM_BENEFICIARY
+        - name: DIM_BENEFICIARY_AGENT
+        - name: DIM_BENEFICIARY_SOURCE
+        - name: DIM_BENEFICIARY_STATUS
+        - name: DIM_CALENDAR
+        - name: DIM_SOURCE_OF_ACQUISITION
+        - name: DIM_PLAYER_NON_US
+        - name: FD_PLAYER_ACQUISITION
+        - name: F_PLAYER_CASHIER_TXN
+        - name: FTD
+        - name: F_PLR_COMMUNICATION_ACTIVITY
+        - name: DIM_MESSAGE_TYPE
+        - name: DIM_CAMPAIGN_SEGMENT
+        - name: DIM_CAMPAIGN
+  - name: DWPRODVIEWSBI
+    schema: DWPRODVIEWSBI
+    database: lcg-bi-mia-prod
+    tables:
+        - name: DAILY_FX_RATE
+        - name: DIM_PLAYER_ACC_CURRENCY_LOG
+        - name: DIM_PLAYER_COUNTRY_LOG
+        - name: DAILY_PLAYER_AFFILIATE_COMMISSION
+
+## pNGR tables
+  - name: pNGR
+    schema: pNGR
+    database: lcg-bi-mia-ada-prd
+    tags: ["ADA pNGR"]
+    tables:
+        - name: pNGR_0
+        - name: pNGR_21
+  - name: pNGR_old
+    schema: MediaReportingpNGR
+    database: api-project-786064088220
+    tags: ["ADA pNGR"]
+    tables:
+        - name: pngr_lc
